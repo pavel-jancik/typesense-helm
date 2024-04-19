@@ -10,7 +10,7 @@ data:
   {{- $nodeseq := untilStep 0 (int .Values.replicaCount) 1 }}
   {{- $nodes := list }}
   {{- range $index := $nodeseq }}
-  {{- $node := printf "%s-%d.%s-headless.%s.svc.%s:8107:%d" $fullname $index $fullname $ns $clusterDomain (int $svcPort) }}
+  {{- $node := printf "%s-%d.%s-headless.%s.svc:8107:%d" $fullname $index $fullname $ns (int $svcPort) }}
   {{- $nodes = append $nodes $node }}
   {{- end }}
   nodes: {{ $nodes | join "," | quote }}

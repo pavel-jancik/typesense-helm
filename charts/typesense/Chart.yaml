@@ -3,8 +3,8 @@ name: typesense
 description: Fast, typo tolerant, in-memory fuzzy Search Engine for building delightful search experiences
 type: application
 
-version: 0.1.1
-appVersion: "0.25.1"
+version: 0.1.2
+appVersion: "26.0"
 
 keywords:
   - search
