@@ -96,6 +96,15 @@ spec:
       tolerations:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      {{- if .Values.topologySpreadConstraints.enabled }}
+      topologySpreadConstraints:
+      - maxSkew: {{ .Values.topologySpreadConstraints.maxSkew }}
+        topologyKey: {{ .Values.topologySpreadConstraints.topologyKey | quote }}
+        whenUnsatisfiable: {{ .Values.topologySpreadConstraints.whenUnsatisfiable | quote }}
+        labelSelector:
+          matchLabels:
+            {{- include "typesense.selectorLabels" . | nindent 12 }}
+      {{- end }}
 
   volumeClaimTemplates:
     - metadata:

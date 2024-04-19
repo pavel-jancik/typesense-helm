@@ -104,3 +104,12 @@ nodeSelector: {}
 tolerations: []
 
 affinity: {}
+
+# Try to distribute the pods aomng zones equaly (if possible)
+topologySpreadConstraints:
+  enabled: true
+  maxSkew: 1
+  topologyKey: "topology.kubernetes.io/zone"
+  whenUnsatisfiable: ScheduleAnyway
+
+
