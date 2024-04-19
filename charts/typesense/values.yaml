@@ -45,6 +45,8 @@ securityContext:
   seccompProfile:
     type: RuntimeDefault
 
+terminationGracePeriodSeconds: 300
+
 persistence:
   enabled: true
   # storageClass: ""
@@ -74,6 +76,16 @@ ingress:
   #  - secretName: chart-example-tls
   #    hosts:
   #      - chart-example.local
+
+startupProbe:
+  failureThreshold: 10
+  periodSeconds: 10
+
+livenessProbe:
+  initialDelaySeconds: 10
+  failureThreshold: 2
+  periodSeconds: 10
+  timeoutSeconds: 5
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
