@@ -12,8 +12,10 @@ keywords:
 home: https://typesense.org/
 sources:
   - https://github.com/typesense/typesense
+  - https://github.com/pavel-jancik/typesense-helm
   - https://github.com/pcmid/charts/tree/main/charts/typesense
-
 maintainers:
+  - name: Pavel Jancik
+    email: pavel.jancik@themama.ai
   - name: pcmid
     email: plzcmid@gmail.com
